@@ -1,0 +1,13 @@
+#ifndef SOUND_H
+#define SOUND_H
+
+enum {
+    SND_PADDLE, SND_BRICK, SND_METAL, SND_LASER, SND_CAPSULE, SND_ENLARGE,
+    SND_DIE, SND_ENEMY, SND_START, SND_LIFE, SND_DOH_HIT, SND_DOH_SHOT,
+    SND_GAMEOVER, SND_WARP, SND_CATCH, SND_ENDING, SND_COUNT
+};
+
+void snd_init(void);
+void snd_play(int id);
+
+#endif
