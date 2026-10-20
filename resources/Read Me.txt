@@ -1,0 +1,28 @@
+Arkanoid
+
+A fan remake of Arkanoid in the style of the Super Nintendo game, for Mac OS X 10.4 on PowerPC Macs: 32
+rounds, then DOH. For PowerPC Macs with Mac OS X 10.4 or later; built and tested on 10.4.11.
+
+1. Drag Arkanoid to your Applications folder and open it. The window takes the largest of 3, 2 or 1 times
+   the game's 256 by 224 pixels that fits your screen. Drag its corner to resize it; it keeps its shape.
+
+2. Return or a click starts. On the title screen, the arrow keys choose the round to start on.
+
+3. Move the Vaus with the mouse or the left and right arrows. Space, Z, X or a click launches the ball and
+   fires the laser. P pauses, Esc goes back to the title screen. Command-Q quits.
+
+4. Catch a falling capsule with the Vaus:
+     S  Slow        slows the ball
+     C  Catch       the ball sticks to the Vaus until you fire
+     L  Laser       the Vaus shoots while you hold fire
+     E  Enlarge     the Vaus grows
+     D  Disruption  the ball splits into three
+     B  Break       opens a gate in the right wall to the next round
+     P  Player      an extra Vaus
+
+5. You start with 2 spare lives, get one more at 20,000 points and one every 60,000 after that. After the
+   game is over you can continue on the same round. The high score is kept in your Preferences folder
+   (local.exe.arkanoid.plist).
+
+Arkanoid is a trademark of Taito. This remake has no code, pictures or sound from Taito's games: the code
+draws every picture and makes every sound. Source: https://github.com/livid/tiger-arkanoid

@@ -6,6 +6,8 @@
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>Arkanoid</string>
+	<key>CFBundleIconFile</key>
+	<string>Arkanoid</string>
 	<key>CFBundleIdentifier</key>
 	<string>local.exe.arkanoid</string>
 	<key>CFBundleInfoDictionaryVersion</key>
