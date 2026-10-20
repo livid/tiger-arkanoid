@@ -1,10 +1,16 @@
 # Arkanoid for Mac OS X 10.4 Tiger (PowerPC)
 
-![Round 1 in the middle of play: a falling D capsule, an enemy over the wall, the ball and the Vaus](docs/play.png)
+![The title screen, then round 1 from its start: the ball breaks the wall, enemies come in, capsules fall](docs/play.gif)
 
 A fan remake of Arkanoid in the style of the Super Nintendo game (Arkanoid: Doh It Again), written as a Cocoa
-app for Mac OS X 10.4 on PowerPC. It has no files beside its program: the code draws every sprite, wall and
-background into a 256 by 224 picture, as the SNES does, and a small synthesizer makes every sound.
+app for Mac OS X 10.4 on PowerPC. Its only file beside the program is its icon: the code draws every sprite,
+wall and background into a 256 by 224 picture, as the SNES does, and a small synthesizer makes every sound.
+
+## Download
+
+The newest release is on [tiger.v2core.com](https://tiger.v2core.com/#arkanoid): a disk image, with its
+SHA-256 and MD5. On the Tiger Mac itself, type `http://tiger.v2core.com/` in Safari, with http: Tiger cannot
+open the https address. Open the disk image and drag Arkanoid to Applications.
 
 ## The game
 
@@ -49,6 +55,11 @@ xcodebuild -configuration Release    # build/Release/Arkanoid.app
 The app is PowerPC only and runs on 10.4 and later. It links only Mac OS X's own frameworks: Cocoa, OpenGL,
 AudioUnit, CoreAudio, CoreServices and CoreFoundation.
 
+On the machine that serves tiger.v2core.com, `./package.sh` makes the release: it builds the committed tree in
+the Tiger apps' scratch guest (`/www/tiger-kit`, started with its `guest-boot.sh`) and writes
+`dist/Arkanoid-<version>.dmg` and its `.sha256`, with the version from `Info.plist`. The site's build, every 2
+minutes, picks up the newest image there.
+
 | File | What it does |
 |---|---|
 | `src/main.m` | the app, its menus and its window: the largest of 3, 2 or 1 times the game's size that fits the screen, resizable at 256:224 |
@@ -56,7 +67,11 @@ AudioUnit, CoreAudio, CoreServices and CoreFoundation.
 | `src/game.c` | the rounds, the rules, the story and the drawing of everything in the game |
 | `src/gfx.c` | the picture's pixels, shadows, fades and text |
 | `src/sound.c` | a 4-channel chip-style synthesizer on Core Audio's default output |
+| `resources/` | the icon, `Arkanoid.icns`, and the disk image's `Read Me.txt` |
+| `tools/make-icon.py` | draws the icon as pixel art in the game's colours: `docs/icon.svg` for the site and `resources/Arkanoid.icns`, with the classic sizes Tiger reads (no PNG elements, which are 10.5's) |
+| `package.sh` | the release (above) |
 
-The pictures above show the Release build in a QEMU Power Mac G4 on Mac OS X 10.4.11.
+The GIF is the released 1.0, installed from tiger.v2core.com in a QEMU Power Mac G4 on Mac OS X 10.4.11 and
+played by a script through the Mac's screen sharing, at about 22 frames a second.
 
 Arkanoid is a trademark of Taito. This remake has no code, pictures or sound from Taito's games.
